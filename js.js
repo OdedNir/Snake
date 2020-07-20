@@ -95,12 +95,21 @@ const hasEatenItself = (element, index, array) => {
 
 const makeFood = () => {
     suggestedPos = [Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize, Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize];
-    if (snakeBody.includes(suggestedPos)) {
+    if (taken(suggestedPos)) {
         makeFood();
     } else {
         ctx.fillStyle = "green"; // Green
         ctx.fillRect(suggestedPos[0], suggestedPos[1], gridSize, gridSize);
     }
+};
+
+const taken = (sugPos) => {
+    for (const pos in snakeBody) {
+        if (pos[0] == sugPos[0] && pos[1] == sugPos[1]) {
+            return true;
+        }
+    }
+    return false;
 };
 
 const moveSnake = () => {
