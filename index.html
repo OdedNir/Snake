@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Snake Game</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <div id="headers-container">
+                <h1>Snake Game</h1>
+                <h2 id="score">Score: 0</h2>
+            </div>
+            <div id="buttons-container">
+                <button id="startButton" onclick="startGame()">Start</button>
+                <button id="endButton" onclick="gameOver()">End</button>
+            </div>
+            <canvas id="canvas" width="900px;" height="600px;" style="background-color: black; border: rgb(158, 158, 158) solid;"></canvas>
+        </div>
+    </body>
+    <script src="js.js"></script>
+</html>
